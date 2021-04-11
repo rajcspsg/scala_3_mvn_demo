@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <scala.version>3.0.0-RC1</scala.version>
+        <scala.version>3.0.0-RC2</scala.version>
     </properties>
     <dependencies>
         <dependency>
@@ -54,6 +54,16 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <scalaVersion>${scala.version}</scalaVersion>
+                    <scalaClassName>dotty.tools.dotc.Main</scalaClassName>
+                    <mainConsole>dotty.tools.dotc.Run</mainConsole>
+                    <useFsc>true</useFsc>
+                    <args>
+                        <arg>-encoding</arg>
+                        <arg>UTF8</arg>
+                    </args>
+                </configuration>
             </plugin>
         </plugins>
     </build>
